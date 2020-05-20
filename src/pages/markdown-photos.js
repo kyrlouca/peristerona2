@@ -46,7 +46,7 @@ function Card({ fileNode }) {
         alt="Photo not found yet"
       />
 
-      <span style={{ fontSize: "1.2rem" }}>Δάσκαλοι</span>
+      <span style={{ fontSize: "1rem",marginTop:"1rem" }}>Δάσκαλοι</span>
       {markdown.headings.map((item, index) => (
         <CardTeacherDiv key={index}>{item.value}</CardTeacherDiv>
       ))}

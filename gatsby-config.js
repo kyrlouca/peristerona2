@@ -14,10 +14,30 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-s3`,
+      resolve: "gatsby-remark-embed-video",
       options: {
-        bucketName: "my-plugin-peristerona",
-      },
+        width: 800,
+        ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+        height: 400, // Optional: Overrides optional.ratio
+        related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+        noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
+        urlOverrides: [
+          {
+            id: 'youtube',
+            embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
+          }
+        ] 
+      }
+    },
+    {
+      resolve: 'gatsby-remark-audio',
+      options: {
+        preload: 'auto',
+        loop: false,
+        controls: true,
+        muted: false,
+        autoplay: false
+      }
     },
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-remark`,

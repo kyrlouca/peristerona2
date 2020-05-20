@@ -98,6 +98,7 @@ function Card({ nodeData }) {
           Χρ. Γέννησης: {nodeData.childMarkdownRemark.frontmatter.year}
         </span>
       </TitleDiv>
+
       <audio
         style={{ marginBottom: "1rem" }}
         controls
@@ -106,6 +107,7 @@ function Card({ nodeData }) {
         code not
         <track default kind="captions" srcLang="en" />
       </audio>
+      
       <cite>“{nodeData.childMarkdownRemark.excerpt}”</cite>
       <RefDiv
         href={fileMap.get(nodeData.childMarkdownRemark.frontmatter?.audioFile)}
@@ -118,6 +120,7 @@ function Card({ nodeData }) {
 }
 
 export default function Interviews() {
+
   const data = useStaticQuery(graphql`
     {
       allFile(
@@ -136,6 +139,7 @@ export default function Interviews() {
                 title
                 year
                 audioFile
+                audio
               }
               excerpt(pruneLength: 600)
             }
@@ -145,6 +149,8 @@ export default function Interviews() {
       }
     }
   `)
+  
+  
   // console.log(data)
   return (
     <LayoutSmoke>
