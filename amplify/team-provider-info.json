@@ -1,0 +1,15 @@
+{
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-peristerona3-prod-172526-authRole",
+            "UnauthRoleArn": "arn:aws:iam::353593888513:role/amplify-peristerona3-prod-172526-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::353593888513:role/amplify-peristerona3-prod-172526-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-peristerona3-prod-172526-deployment",
+            "UnauthRoleName": "amplify-peristerona3-prod-172526-unauthRole",
+            "StackName": "amplify-peristerona3-prod-172526",
+            "StackId": "arn:aws:cloudformation:eu-west-2:353593888513:stack/amplify-peristerona3-prod-172526/6d216a70-945c-11ea-ad7b-021679f87d94",
+            "AmplifyAppId": "dsy3cdfejyetq"
+        }
+    }
+}
