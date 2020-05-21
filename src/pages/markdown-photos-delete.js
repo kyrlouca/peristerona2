@@ -1,8 +1,15 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
 import Img from "gatsby-image"
+import styled from "styled-components"
+import LayoutSmoke from "components/layout-smoke"
 
+const Container = styled.div`
+  /* background: #f4f4f4; */
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+`
 const CardDiv = styled.div`
   /* background: yellow; */
   display: flex;
@@ -12,32 +19,35 @@ const CardDiv = styled.div`
   padding-right: 1rem;
   border-bottom: solid 3px var(--brand-color);
 `
-
 const TitleDiv = styled.div`
   /* font-size: 1.2rem; */
   text-align: center;
   background: whitesmoke;
 `
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 2rem;
-  margin: 0;
-  padding: 0;
+const TeacherTitle = styled.div`
+  font-size: 1rem;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  
+`
+const CardTeacherDiv = styled.div`
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-left: 1rem;
+  margin-top:1rem;
 `
 
-const SingleImage = ({ fileNode }) => {
-  const frontmatter = fileNode.childMarkdownRemark.frontmatter
-  let xfluid =
-    fileNode?.childMarkdownRemark?.frontmatter.featuredImage?.childImageSharp
-      .fluid
-  console.log(fileNode)
+function Card({ fileNode }) {
+  const markdown = fileNode.childMarkdownRemark
 
+  let xfluid = markdown?.frontmatter.featuredImage?.childImageSharp.fluid
+  // console.log(markdown)
   return (
     <CardDiv>
       <TitleDiv>
-        <h5>{frontmatter.title}</h5>
+        <h5>{markdown.frontmatter.title}</h5>
       </TitleDiv>
       <Img
         fluid={{
@@ -45,20 +55,26 @@ const SingleImage = ({ fileNode }) => {
         }}
         alt="Photo not found yet"
       />
-      <div>{fileNode.name}</div>
+      <TeacherTitle>
+        <div>Δάσκαλοι</div>
+        <div style={{ fontSize: "0.rem" }}>{fileNode.name}</div>
+      </TeacherTitle>
+      {markdown.headings.map((item, index) => (
+        <CardTeacherDiv key={index}>{item.value}</CardTeacherDiv>
+      ))}
     </CardDiv>
   )
 }
 
-export default function PhotosOnly() {
-  // console.log(data)
+export default function MarkdownPhotos() {
 
+  
   const data = useStaticQuery(graphql`
     {
       allFile(
         filter: {
           sourceInstanceName: { eq: "xassets" }
-          relativeDirectory: { eq: "markdown-photos-only" }
+          relativeDirectory: { eq: "markdown-img" }
           ext: { eq: ".md" }
         }
         sort: { fields: name }
@@ -94,10 +110,12 @@ export default function PhotosOnly() {
   // console.log(data)
 
   return (
-    <Container>
-      {data.allFile.edges.map(edge => (
-        <SingleImage key={edge.node.id} fileNode={edge.node} />
-      ))}
-    </Container>
+    <LayoutSmoke>
+      <Container>
+        {data.allFile.edges.map(edge => (
+          <Card key={edge.node.id} fileNode={edge.node} />
+        ))}
+      </Container>
+    </LayoutSmoke>
   )
 }

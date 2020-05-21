@@ -54,8 +54,8 @@ export default function navbar() {
       </TitleDiv>
       <LinksContainer>
         <XLink to="/">Home</XLink>
-        <XLink to="/markdown-photos">Σχολικές Φωτογραφίες</XLink>
-        <XLink to="/photos">Φωτογραφίες</XLink>
+        <XLink to="/photos-school-page">Σχολικές Φωτογραφίες</XLink>
+        <XLink to="/photos-only-page">Φωτογραφίες</XLink>
         <XLink to="/interviews">Συνεντεύξεις</XLink>
         <XLink to="/test">test</XLink>
       </LinksContainer>
