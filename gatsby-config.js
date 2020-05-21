@@ -49,14 +49,7 @@ module.exports = {
         name: `xassets`,
       },
     },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/xassets/album`,
-      },
-    },
-
+    
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
