@@ -13,21 +13,30 @@ const Container = styled.div`
 const CardDiv = styled.div`
   /* background: yellow; */
   display: flex;
-  flex-flow: column nowrap;  
-  margin-bottom: 2rem;  
-  padding-left:1rem;
-  padding-right:1rem;
-  border-bottom: solid 3px  var(--brand-color);;
+  flex-flow: column nowrap;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: solid 3px var(--brand-color);
 `
 const TitleDiv = styled.div`
   /* font-size: 1.2rem; */
   text-align: center;
   background: whitesmoke;
 `
+
+const TeacherTitle = styled.div`
+  font-size: 1rem;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  
+`
 const CardTeacherDiv = styled.div`
   font-size: 0.9rem;
   font-style: italic;
   margin-left: 1rem;
+  margin-top:1rem;
 `
 
 function Card({ fileNode }) {
@@ -37,16 +46,19 @@ function Card({ fileNode }) {
   // console.log(markdown)
   return (
     <CardDiv>
-      <TitleDiv><h5>{markdown.frontmatter.title}</h5></TitleDiv>
-      {/* <p>{fileNode.name}</p> */}
+      <TitleDiv>
+        <h5>{markdown.frontmatter.title}</h5>
+      </TitleDiv>
       <Img
         fluid={{
           ...xfluid,
         }}
         alt="Photo not found yet"
       />
-
-      <span style={{ fontSize: "1rem",marginTop:"1rem" }}>Δάσκαλοι</span>
+      <TeacherTitle>
+        <div>Δάσκαλοι</div>
+        <div style={{ fontSize: "0.rem" }}>{fileNode.name}</div>
+      </TeacherTitle>
       {markdown.headings.map((item, index) => (
         <CardTeacherDiv key={index}>{item.value}</CardTeacherDiv>
       ))}
@@ -55,6 +67,8 @@ function Card({ fileNode }) {
 }
 
 export default function MarkdownPhotos() {
+
+  
   const data = useStaticQuery(graphql`
     {
       allFile(
@@ -63,6 +77,7 @@ export default function MarkdownPhotos() {
           relativeDirectory: { eq: "markdown-img" }
           ext: { eq: ".md" }
         }
+        sort: { fields: name }
       ) {
         edges {
           node {

@@ -20,19 +20,15 @@ const Container = styled.div`
 
 const SingleNode = ({ node }) => {
   console.log(node)
+  console.log(node.childMarkdownRemark.frontmatter.attachments.publicURL)
   return (
     <PhotoCard>
       {node.name}
-
-      <iframe
-      src={node.videoSourceURL}
-      title={node.videoTitle}
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      frameBorder="0"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      allowFullScreen
-    />
+      <audio controls>
+        code not
+        <track default kind="captions" srcLang="en" />
+        src={node.childMarkdownRemark.frontmatter.attachments.publicURL}
+      </audio>
     </PhotoCard>
   )
 }
@@ -41,15 +37,16 @@ export default function Test() {
   const data = useStaticQuery(graphql`
     {
       file(sourceInstanceName: { eq: "xassets" }, name: { eq: "10Markdown" }) {
-        childMarkdownRemark {
-          frontmatter {
-            videoSourceURL
-            videoTitle
-          }
-        }
         name
         publicURL
-        relativeDirectory
+        childMarkdownRemark {
+          frontmatter {
+            title
+            attachments {
+              publicURL
+            }
+          }
+        }
       }
     }
   `)

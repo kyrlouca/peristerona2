@@ -4,37 +4,37 @@ import styled from "styled-components"
 import LayoutSmoke from "components/layout-smoke"
 import { devices } from "../utils/device-size"
 
-import audio31 from "../xassets/audio/Παντελης Σιημητρας.mp3"
-import audio32 from "../xassets/audio/Αντρέας Λουκά.mp3"
-import audio33 from "../xassets/audio/Αδαμος Μαγνητης mono.mp3"
-import audio34 from "../xassets/audio/Δημήτρης Παπαθεράποντος Στράτος.mp3"
-import audio35 from "../xassets/audio/Χρηστος Μιχαλόπουλος.mp3"
-import audio36 from "../xassets/audio/Κυριακού Ζαχαρια.mp3"
-import audio37 from "../xassets/audio/Χριστάκης Ιακώβου.mp3"
-import audio38 from "../xassets/audio/Δημητράκης Λουκά.mp3"
+import audioDem from "../xassets/audio/Δημητράκης Λουκά.mp3"
+import audio32 from "../xassets/audio/Παντελης Σιημητρας.mp3"
+import audio33 from "../xassets/audio/Αντρέας Λουκά.mp3"
+import audio34 from "../xassets/audio/Αδαμος Μαγνητης mono.mp3"
+import audio35 from "../xassets/audio/Δημήτρης Παπαθεράποντος Στράτος.mp3"
+import audio36 from "../xassets/audio/Χρηστος Μιχαλόπουλος.mp3"
+import audio37 from "../xassets/audio/Κυριακού Ζαχαρια.mp3"
+import audio38 from "../xassets/audio/Χριστάκης Ιακώβου.mp3"
 
-import file1 from "../xassets/audio/REM 34.pdf"
+import fileDem from "../xassets/audio/Δημήτρης Λουκά Συνέντευξη στον Λόγο.pdf"
 import file2 from "../xassets/audio/REM 34.pdf"
 import file3 from "../xassets/audio/REM 36.pdf"
 import file4 from "../xassets/audio/REM 37.pdf"
 import file5 from "../xassets/audio/REM 35.pdf"
-import file6 from "../xassets/audio/REM 34.pdf"
+import file6 from "../xassets/audio/REM 46.pdf"
 import file7 from "../xassets/audio/REM 39.pdf"
-import file8 from "../xassets/audio/REM 38.pdf"
+import file8 from "../xassets/audio/REM 38_NEW.pdf"
 //TODO have two queuries, one for the markdown files and one for the pdf (and audio) files
 //TODO for each markdown find the corresponding pdf file
 const myMap = new Map([
-  ["Δημητράκης", audio38],
-  ["Σιημητράς", audio31],
-  ["Λουκά", audio32],
-  ["Μαγνητης", audio33],
-  ["Στράτος", audio34],
-  ["Μιχαλόπουλος", audio35],
-  ["Κυριακού", audio36],
-  ["Ιακώβου", audio37],
+  ["Δημητράκης", audioDem],
+  ["Σιημητράς", audio32],
+  ["Λουκά", audio33],
+  ["Μαγνητης", audio34],
+  ["Στράτος", audio35],
+  ["Μιχαλόπουλος", audio36],
+  ["Κυριακού", audio37],
+  ["Ιακώβου", audio38],
 ])
 const fileMap = new Map([
-  ["Δημητράκης", file1],
+  ["Δημητράκης", fileDem],
   ["Σιημητράς", file2],
   ["Λουκά", file3],
   ["Μαγνητης", file4],
@@ -63,7 +63,7 @@ const CardDiv = styled.div`
 const TitleDiv = styled.div`
   display: grid;
   grid-column-gap: 2rem;
-  grid-template-columns:  300px auto;
+  grid-template-columns: 300px auto;
 
   align-items: center;
 
@@ -107,7 +107,7 @@ function Card({ nodeData }) {
         code not
         <track default kind="captions" srcLang="en" />
       </audio>
-      
+
       <cite>“{nodeData.childMarkdownRemark.excerpt}”</cite>
       <RefDiv
         href={fileMap.get(nodeData.childMarkdownRemark.frontmatter?.audioFile)}
@@ -120,7 +120,6 @@ function Card({ nodeData }) {
 }
 
 export default function Interviews() {
-
   const data = useStaticQuery(graphql`
     {
       allFile(
@@ -139,7 +138,6 @@ export default function Interviews() {
                 title
                 year
                 audioFile
-                audio
               }
               excerpt(pruneLength: 600)
             }
@@ -149,8 +147,7 @@ export default function Interviews() {
       }
     }
   `)
-  
-  
+
   // console.log(data)
   return (
     <LayoutSmoke>

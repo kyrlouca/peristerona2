@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import LayoutSmoke from "components/layout-smoke"
-import AlbumPhotos from "components/album-photos"
+import PhotosOnly from "../components/photos-only";
 
 
 const ContainerDiv = styled.div`
@@ -15,7 +15,7 @@ export default function Photos() {
     <LayoutSmoke>
       <ContainerDiv>
       <h3>Φωτογραφίες</h3>        
-        <AlbumPhotos />
+        <PhotosOnly />
       </ContainerDiv>
     </LayoutSmoke>
   )

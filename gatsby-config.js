@@ -29,16 +29,7 @@ module.exports = {
         ] 
       }
     },
-    {
-      resolve: 'gatsby-remark-audio',
-      options: {
-        preload: 'auto',
-        loop: false,
-        controls: true,
-        muted: false,
-        autoplay: false
-      }
-    },
+    
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-remark`,
     {
