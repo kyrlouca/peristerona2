@@ -3,6 +3,15 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 2rem;
+  margin: 0;
+  padding: 0;
+`
+
 const CardDiv = styled.div`
   /* background: yellow; */
   display: flex;
@@ -19,13 +28,6 @@ const TitleDiv = styled.div`
   background: whitesmoke;
 `
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 2rem;
-  margin: 0;
-  padding: 0;
-`
 
 const SingleImage = ({ fileNode }) => {
   const frontmatter = fileNode.childMarkdownRemark.frontmatter

@@ -3,7 +3,7 @@ import styled from "styled-components"
 // import Img from "gatsby-image"
 
 import LayoutKyr from "components/layout-kyr"
-import FrontPagePhotos from "components/front-page-photos"
+import FrontPagePhotos from "components/photos-front-page"
 import SitariPicture from "components/sitariPicture"
 import DownloadButton from "components/download-book"
 import Blogs from "components/blog-entries"

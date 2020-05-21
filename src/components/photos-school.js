@@ -2,13 +2,13 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import LayoutSmoke from "components/layout-smoke"
+// import LayoutSmoke from "components/layout-smoke"
 
 const Container = styled.div`
   /* background: #f4f4f4; */
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 `
 const CardDiv = styled.div`
   /* background: yellow; */
@@ -22,6 +22,7 @@ const CardDiv = styled.div`
 const TitleDiv = styled.div`
   /* font-size: 1.2rem; */
   text-align: center;
+  text-overflow:clip;
   background: whitesmoke;
 `
 
@@ -30,13 +31,16 @@ const TeacherTitle = styled.div`
   display: flex;
   justify-content:space-between;
   align-items:center;
+  margin-top:1rem;
   
 `
-const CardTeacherDiv = styled.div`
+const TeacherName = styled.div`
   font-size: 0.9rem;
   font-style: italic;
+  margin:0;
   margin-left: 1rem;
-  margin-top:1rem;
+  /* padding-top:0.3rem; */
+
 `
 
 function Card({ fileNode }) {
@@ -57,10 +61,10 @@ function Card({ fileNode }) {
       />
       <TeacherTitle>
         <div>Δάσκαλοι</div>
-        <div style={{ fontSize: "0.rem" }}>{fileNode.name}</div>
+        <div style={{ fontSize: "0.6rem" }}>{fileNode.name}</div>
       </TeacherTitle>
       {markdown.headings.map((item, index) => (
-        <CardTeacherDiv key={index}>{item.value}</CardTeacherDiv>
+        <TeacherName key={index}>{item.value}</TeacherName>
       ))}
     </CardDiv>
   )
@@ -109,13 +113,11 @@ export default function MarkdownPhotos() {
   // console.log("marjd")
   // console.log(data)
 
-  return (
-    <LayoutSmoke>
+  return (    
       <Container>
         {data.allFile.edges.map(edge => (
           <Card key={edge.node.id} fileNode={edge.node} />
         ))}
-      </Container>
-    </LayoutSmoke>
+      </Container>    
   )
 }
