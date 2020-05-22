@@ -29,8 +29,7 @@ const TitleDiv = styled.div`
 `
 const FooterDiv = styled.div`
   font-size: 0.6rem;
-  text-align: right;
-
+  text-align: right;gas
   
 `
 

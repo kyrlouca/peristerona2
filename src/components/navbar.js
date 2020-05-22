@@ -12,14 +12,14 @@ const ContainerDiv = styled.div`
   align-items: center;
 `
 const TitleDiv = styled.div`
-  /* background: gray; */
+  /* background: blue; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 30px;
   font-style: italic;
   padding-right: 15px;
 
   margin-left: 15px;
-  padding: 0;
+  padding: 1.2rem;
   display: flex;
   flex-flow: row wrap;
   white-space: pre;

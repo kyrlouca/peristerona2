@@ -109,10 +109,7 @@ function Card({ nodeData }) {
       </audio>
 
       <cite>“{nodeData.childMarkdownRemark.excerpt}”</cite>
-      <RefDiv
-        href={fileMap.get(nodeData.childMarkdownRemark.frontmatter?.audioFile)}
-        download
-      >
+     <RefDiv>
         file {nodeData.childMarkdownRemark.frontmatter?.audioFile}
       </RefDiv>
     </CardDiv>

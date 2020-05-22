@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 const Container = styled.div`
   /* background: #f4f4f4; */
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 `
@@ -57,7 +58,9 @@ function Card({ fileNode }) {
           ...xfluid,
         }}
         alt="Photo not found yet"
+        
       />
+      
       <TeacherTitle>
         <div>Δάσκαλοι</div>
         <div style={{ fontSize: "0.6rem" }}>{fileNode.name}</div>
