@@ -4,8 +4,11 @@ import LayoutSmoke from "components/layout-smoke"
 import PhotosOnly from "../components/photos-only"
 
 const ContainerDiv = styled.div`
-  padding-left: 2rem;
   margin: 0;
+  margin-left: 2rem;
+  padding:0;
+  display:flex;
+  flex-flow:column nowrap;
 `
 
 export default function Photos() {

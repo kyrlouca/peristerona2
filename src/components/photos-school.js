@@ -6,7 +6,6 @@ import styled from "styled-components"
 
 const Container = styled.div`
   /* background: #f4f4f4; */
-  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 `

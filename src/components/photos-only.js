@@ -27,19 +27,25 @@ const TitleDiv = styled.div`
   text-align: center;
   background: whitesmoke;
 `
+const FooterDiv = styled.div`
+  font-size: 0.6rem;
+  text-align: right;
+
+  
+`
 
 
 const SingleImage = ({ fileNode }) => {
-  const frontmatter = fileNode.childMarkdownRemark.frontmatter
+  const frontmatter = fileNode.childMarkdownRemark?.frontmatter
   let xfluid =
-    fileNode?.childMarkdownRemark?.frontmatter.featuredImage?.childImageSharp
+    fileNode?.childMarkdownRemark?.frontmatter?.featuredImage?.childImageSharp
       .fluid
   console.log(fileNode)
 
   return (
     <CardDiv>
       <TitleDiv>
-        <h5>{frontmatter.title}</h5>
+        <h5>{frontmatter?.title}</h5>
       </TitleDiv>
       <Img
         fluid={{
@@ -47,7 +53,7 @@ const SingleImage = ({ fileNode }) => {
         }}
         alt="Photo not found yet"
       />
-      <div>{fileNode.name}</div>
+      <FooterDiv>{fileNode?.name}</FooterDiv>
     </CardDiv>
   )
 }
