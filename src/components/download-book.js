@@ -59,7 +59,7 @@ export default function DownloadButton() {
       </NameDiv>
       <BookDiv
         href={periFile}
-        download
+        download ="Περιστερωνοπηγή - Ιστορικές Αναμνήσεις"
       >
         <NameDiv>
           Οι αναμνήσεις μου σε βιβλίο

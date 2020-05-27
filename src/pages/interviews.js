@@ -46,7 +46,7 @@ const fileMap = new Map([
 
 const ContainerDiv = styled.div`
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   width: 80%;
   margin: 0px auto 10px 10px;
   padding-left: 10px;
@@ -81,7 +81,6 @@ const TitleDiv = styled.div`
 const RefDiv = styled.a`
   :hover {
     color: var(--brand-color);
-    cursor: pointer;
   }
   color: blue;
   box-shadow: none;
@@ -110,10 +109,11 @@ function Card({ nodeData }) {
       </audio>
 
       <cite>“{nodeData.childMarkdownRemark.excerpt}”</cite>
-      <RefDiv>
+      <RefDiv
+        href={fileMap.get(nodeData.childMarkdownRemark.frontmatter?.audioFile)}
+        download ={nodeData.childMarkdownRemark.frontmatter?.audioFile}
+      >
         file {nodeData.childMarkdownRemark.frontmatter?.audioFile}
-        download
-        href={file2}
       </RefDiv>
     </CardDiv>
   )
