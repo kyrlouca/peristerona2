@@ -1,59 +1,38 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
+import ReactModal from "react-modal"
+// import styled from "styled-components"
+ReactModal.setAppElement('body')
 
-const PhotoCard = styled.div`
-  padding: 1rem;
-  padding-left: 0px;
-  margin: 0px;
-  /* padding: 0rem 1rem; */
-  border-bottom: solid 3px var(--brand-color);
-`
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 2rem;
-  margin: 0;
-  padding: 0;
-`
-
-const SingleNode = ({ node }) => {
-  console.log(node)
-  console.log(node.childMarkdownRemark.frontmatter.attachments.publicURL)
-  return (
-    <PhotoCard>
-      {node.name}
-      <audio controls>
-        code not
-        <track default kind="captions" srcLang="en" />
-        src={node.childMarkdownRemark.frontmatter.attachments.publicURL}
-      </audio>
-    </PhotoCard>
-  )
+const customStyles = {
+  content: {
+    background: "yellow",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
 }
 
+// const ModalStyle = styled(Modal)`
+//   top: 50%;
+//   left: 50%;
+//   height:100vh;
+//   right: auto;
+//   bottom: auto;
+//   margin-right: -50%;
+//   transform: translate(-50%, -50%);
+// `
+
 export default function Test() {
-  const data = useStaticQuery(graphql`
-    {
-      file(sourceInstanceName: { eq: "xassets" }, name: { eq: "10Markdown" }) {
-        name
-        publicURL
-        childMarkdownRemark {
-          frontmatter {
-            title
-            attachments {
-              publicURL
-            }
-          }
-        }
-      }
-    }
-  `)
-  // console.log(data)
+  const buttonClick = () => {
+    alert('hey')
+  }
   return (
-    <Container>
-      <SingleNode node={data.file} />
-    </Container>
+    <div>
+      oudt
+      <button onClick={buttonClick}>hello </button>
+    </div>
   )
 }
