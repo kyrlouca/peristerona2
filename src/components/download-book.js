@@ -14,6 +14,7 @@ const Container = styled.div`
 `
 const BookDiv=styled.a`
   margin: 0.8rem 0;
+  margin-top:3rem;
   font-size:0.9rem;
   color: blue;
   /* box-shadow: none; */
@@ -27,6 +28,7 @@ const TextDiv = styled.div`
 `
 const NameDiv = styled.div`
   margin: 0 0.8rem ;
+  margin-bottom:1rem;
 
 `
 
@@ -57,6 +59,7 @@ export default function DownloadButton() {
         <br/>
         Δάσκαλος εκ Περιστερωνοπηγής
       </NameDiv>
+      <div style={{ borderBottom: "solid whitesmoke 3rem" }}></div>
       <BookDiv
         href={periFile}
         download ="Περιστερωνοπηγή - Ιστορικές Αναμνήσεις"

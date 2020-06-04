@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -29,10 +28,8 @@ const TitleDiv = styled.div`
 `
 const FooterDiv = styled.div`
   font-size: 0.6rem;
-  text-align: right;gas
-  
+  text-align: right;
 `
-
 
 const SingleImage = ({ fileNode }) => {
   const frontmatter = fileNode.childMarkdownRemark?.frontmatter

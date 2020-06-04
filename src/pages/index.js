@@ -13,10 +13,7 @@ import { devices } from "../utils/device-size"
 // TODO use contentful or similar
 // TODO use DynamoDb and graphql
 // TODO use netlify or gatsby cloud to deploy?
-// TODO pictures should have a number
 // TODO pictures to zoom (sideways on mobiles) and download 
-// TODO pictures 70-71 teacher
-// TODO assets pdf34 page 10
 
 
 const ContainerDiv = styled.header`
