@@ -106,7 +106,7 @@ export default function Index({ data }) {
           </BlogsDiv>
         </MainDiv>
         <FooterDiv>
-          <Version>v1.08</Version>
+          <Version>v1.09</Version>
           <Logo>
             <EuSimpleImg />
           </Logo>

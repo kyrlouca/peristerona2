@@ -15,7 +15,7 @@ const CardDiv = styled.div`
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 2rem;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
   padding-right: 1rem;
   border-bottom: solid 3px var(--brand-color);
 `

@@ -78,7 +78,7 @@ export default function Test() {
   // const LineS = styled(line)``
 
   const fluid = data.file.childImageSharp.fluid
-  console.log(fluid)
+  // console.log(fluid)
   const openModal = () => {
     setOpenModal(true)
   }
