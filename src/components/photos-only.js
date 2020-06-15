@@ -5,9 +5,11 @@ import Img from "gatsby-image"
 
 const Container = styled.div`
   display: grid;
+  margin: 0;
+  margin-top: 0.5rem;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 2rem;
-  margin: 0;
+  
   padding: 0;
 `
 
