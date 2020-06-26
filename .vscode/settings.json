@@ -4,5 +4,6 @@
         "src\\xassets",
         "src\\xassets\\markdown-img",
         "src\\pages\\index.js"
-    ]
+    ],
+    "deno.enable": false
 }

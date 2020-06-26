@@ -23,15 +23,21 @@ const TitleDiv = styled.div`
   display: flex;
   flex-flow: row wrap;
   white-space: pre;
+  justify-content: center;
+  @media ${devices.tablet} {
+    justify-content: center;
+  }
+`
+const DashDiv = styled.div`
+  @media ${devices.tablet} {
+    display: none;
+  }
 `
 
 const LinksContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
-  @media ${devices.mobile} {
-    justify-content: flex-start;
-  }
+  justify-content: center;
 `
 
 const XLink = styled(Link).attrs({
@@ -50,7 +56,9 @@ export default function navbar() {
   return (
     <ContainerDiv>
       <TitleDiv>
-        <div>Περιστερωνοπηγή </div> <div>- Ιστορικές Αναμνήσεις</div>
+        <div> Περιστερωνοπηγή </div>
+        <DashDiv> - </DashDiv>
+        <div>Ιστορικές Αναμνήσεις</div>
       </TitleDiv>
       <LinksContainer>
         <XLink to="/">Home</XLink>
