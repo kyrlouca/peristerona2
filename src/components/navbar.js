@@ -17,7 +17,6 @@ const TitleDiv = styled.div`
   font-size: 30px;
   font-style: italic;
   padding-right: 15px;
-
   margin-left: 15px;
   padding: 1.2rem;
   display: flex;
@@ -26,6 +25,14 @@ const TitleDiv = styled.div`
   justify-content: center;
   @media ${devices.tablet} {
     justify-content: center;
+  }
+  @media ${devices.mobile} {
+    justify-content: center;
+    font-size:26px;
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
   }
 `
 const DashDiv = styled.div`

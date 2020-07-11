@@ -9,7 +9,7 @@ export default function  DevSize() {
 }
 
  const size = {
-  mobile: "360px",
+  mobile: "380px",
   tablet: "768px",
 }
 
