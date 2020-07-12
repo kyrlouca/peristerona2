@@ -4,9 +4,13 @@ import { Link } from "gatsby"
 import { devices } from "utils/device-size"
 
 const ContainerDiv = styled.div`
+  margin: 0;
+`
+const NavbarDiv = styled.div`
   /* background: lightcyan; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+  grid-auto-flow: row;
   justify-content: space-between;
   justify-items: left;
   align-items: center;
@@ -28,11 +32,11 @@ const TitleDiv = styled.div`
   }
   @media ${devices.mobile} {
     justify-content: center;
-    font-size:26px;
-    margin-left:0;
-    margin-right:0;
-    padding-left:0;
-    padding-right:0;
+    font-size: 26px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 `
 const DashDiv = styled.div`
@@ -58,22 +62,31 @@ const XLink = styled(Link).attrs({
   margin: 0 10px;
   white-space: nowrap;
 `
+const SocialDiv = styled.div`
+  background: lightcyan;
+  display: flex;
+  justify-content:center;  
+  
+`
 
 export default function navbar() {
   return (
     <ContainerDiv>
-      <TitleDiv>
-        <div> Περιστερωνοπηγή </div>
-        <DashDiv> - </DashDiv>
-        <div>Ιστορικές Αναμνήσεις</div>
-      </TitleDiv>
-      <LinksContainer>
-        <XLink to="/">Home</XLink>
-        <XLink to="/photos-school-page">Σχολικές Φωτογραφίες</XLink>
-        <XLink to="/photos-only-page">Φωτογραφίες</XLink>
-        <XLink to="/interviews">Συνεντεύξεις</XLink>
-        {/* <XLink to="/test">test</XLink> */}
-      </LinksContainer>
+      <NavbarDiv>
+        <TitleDiv>
+          <div> Περιστερωνοπηγή </div>
+          <DashDiv> - </DashDiv>
+          <div>Ιστορικές Αναμνήσεις</div>
+        </TitleDiv>
+        <LinksContainer>
+          <XLink to="/">Home</XLink>
+          <XLink to="/photos-school-page">Σχολικές Φωτογραφίες</XLink>
+          <XLink to="/photos-only-page">Φωτογραφίες</XLink>
+          <XLink to="/interviews">Συνεντεύξεις</XLink>
+          <XLink to="/test">test</XLink>
+        </LinksContainer>
+      </NavbarDiv>
+      <SocialDiv>hello social</SocialDiv>
     </ContainerDiv>
   )
 }
