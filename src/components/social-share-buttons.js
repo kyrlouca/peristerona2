@@ -10,33 +10,37 @@ import {
 } from "react-share"
 
 const ContainerDiv = styled.div`
-  margin: 0;
-  background: red;
+  /* background: red; */
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-gap: 0.3em;
+  align-items:  center;
+  align-content: center;
 `
 
+const OutDiv = styled.div`
+  margin-top: 10px;
+`
 const XIcon = ({ Wrapped }) => {
-  return <Wrapped size={32} round />
+  return (
+    <OutDiv>
+      <Wrapped size={32} round={true} />{" "}
+    </OutDiv>
+  )
 }
 
 export default function SocialShareButtons() {
   return (
     <ContainerDiv>
       <FacebookShareButton url={"www.peristerona2.com"}>
-      <XIcon Wrapped={FacebookIcon} />
+        <XIcon Wrapped={FacebookIcon} />
       </FacebookShareButton>
-      <ViberShareButton
-        url={"www.peristerona2.com"}
-        className="button is-outlined is-rounded facebook"
-      >
+      <ViberShareButton url={"www.peristerona2.com"}>
         <XIcon Wrapped={ViberIcon} />
       </ViberShareButton>
-      <WhatsappShareButton
-        url={"www.peristerona2.com"}
-        className="button is-outlined is-rounded facebook"
-      >
+      <WhatsappShareButton url={"www.peristerona2.com"}>
         <XIcon Wrapped={WhatsappIcon} />
       </WhatsappShareButton>
-      Hello from Social
     </ContainerDiv>
   )
 }

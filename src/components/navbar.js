@@ -62,12 +62,6 @@ const XLink = styled(Link).attrs({
   margin: 0 10px;
   white-space: nowrap;
 `
-const SocialDiv = styled.div`
-  background: lightcyan;
-  display: flex;
-  justify-content:center;  
-  
-`
 
 export default function navbar() {
   return (
@@ -83,10 +77,10 @@ export default function navbar() {
           <XLink to="/photos-school-page">Σχολικές Φωτογραφίες</XLink>
           <XLink to="/photos-only-page">Φωτογραφίες</XLink>
           <XLink to="/interviews">Συνεντεύξεις</XLink>
-          <XLink to="/test">test</XLink>
+          {/* <XLink to="/test">test</XLink> */}
         </LinksContainer>
       </NavbarDiv>
-      <SocialDiv>hello social</SocialDiv>
+      
     </ContainerDiv>
   )
 }

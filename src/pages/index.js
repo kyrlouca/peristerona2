@@ -8,6 +8,7 @@ import SitariPicture from "components/sitariPicture"
 import DownloadButton from "components/download-book"
 import Blogs from "components/blog-entries"
 import EuSimpleImg from "components/EuPicture"
+import SocialButtons from 'components/social-share-buttons'
 import { devices } from "../utils/device-size"
 
 // TODO use contentful or similar
@@ -53,9 +54,10 @@ const BlogsDiv = styled.div`
 `
 const SmokeBar = styled.div`
   display: flex;
-  min-height: 3rem;
-  margin: 0;
+  min-height: 3rem;  
   padding: 0;
+  padding-left:0.5rem;
+  /* padding-top:0.3rem; */
   background: whitesmoke;
   border-bottom: solid 0.4rem var(--brand-color);
 `
@@ -86,12 +88,21 @@ const Version = styled.div`
 const Logo = styled.div`
   grid-area: b;
 `
+
+const SocialDiv = styled.div`
+  background: lightcyan;
+  display: flex;
+  justify-content:center;    
+`
+
+
 export default function Index({ data }) {
   // console.log(data)
   return (
     <LayoutKyr>
       <ContainerDiv>
-        <SmokeBar />
+        <SmokeBar><SocialButtons/> </SmokeBar>
+        {/* <SocialDiv>hello so cial</SocialDiv> */}
         <SitariPicture />
         <DownloadButton />
         <div style={{ borderBottom: "solid whitesmoke 3rem" }}></div>
